@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # redirection
+#Configure your Nginx server so that /redirect_me is redirecting to another page
 sudo apt-get update -y
 sudo apt-get install -y nginx
 sudo ufw allow 'Nginx HTTP'
@@ -22,4 +23,5 @@ sudo chown -R "$USER":"$USER" /var/www/html/index.html
 sudo chown -R "$USER":"$USER" /etc/nginx/sites-available/default
 echo "Holberton School" > /var/www/html/index.html
 echo "$config" > /etc/nginx/sites-available/default
+sudo service nginx restart
 sudo service nginx restart
